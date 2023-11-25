@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:slot/global/helper.dart' as Global;
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -40,38 +41,32 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 64.0,
               ),
-              Text(
-                'Phone Number',
-                style: GoogleFonts.inter(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Global.customText(text: 'Phone Number', type: 'header'),
               SizedBox(
                 height: 8.0,
               ),
               TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
+                  enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide(
+                        width: 1, color: Color.fromARGB(255, 158, 158, 158)),
                   ),
                   hintText: 'Phone Number',
                 ),
               ),
               SizedBox(height: 24.0),
-              Text(
-                'Password',
-                style: GoogleFonts.inter(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Global.customText(text: 'Password', type: 'header'),
               SizedBox(
                 height: 8.0,
               ),
               TextField(
                 obscureText: passwordVisible,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
+                  enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide(
+                        width: 1, color: Color.fromARGB(255, 158, 158, 158)),
                   ),
                   suffixIcon: IconButton(
                     icon: Icon(passwordVisible
@@ -96,11 +91,13 @@ class _LoginState extends State<Login> {
                 width: MediaQuery.sizeOf(context).width * 1,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 34, 159, 164),
+                    backgroundColor: Global.priCol,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
                   child: Text(
                     'Sign In',
                     style: GoogleFonts.inter(
@@ -112,12 +109,17 @@ class _LoginState extends State<Login> {
               ),
               SizedBox(height: 25.0),
               Center(
-                child: Text(
-                  'Register Now',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 34, 159, 164),
-                    fontSize: 20.0,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
+                  child: Text(
+                    'Register Now',
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 34, 159, 164),
+                      fontSize: 20.0,
+                    ),
                   ),
                 ),
               ),

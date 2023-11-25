@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:slot/pages/home.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:slot/pages/login.dart';
+import 'package:slot/pages/signup.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -9,6 +11,8 @@ void main() {
       // ),
       initialRoute: '/',
       routes: {
-        '/': (context) => Login(),
+        '/': (context) => Home(),
+        '/login': (context) => Login(),
+        '/signup': (context) => SignUp(),
       }));
 }

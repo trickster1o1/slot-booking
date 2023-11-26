@@ -77,7 +77,7 @@ class _SignUpState extends State<SignUp> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30.0),
                             color: selected == 'male'
-                                ? Color.fromARGB(255, 37, 95, 219)
+                                ? Global.priCol
                                 : Color.fromARGB(255, 158, 158, 158)),
                         child: Global.customText(
                             text: 'Male',
@@ -96,7 +96,7 @@ class _SignUpState extends State<SignUp> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30.0),
                             color: selected == 'female'
-                                ? Color.fromARGB(255, 37, 95, 219)
+                                ? Global.priCol
                                 : Color.fromARGB(255, 158, 158, 158)),
                         child: Global.customText(
                             text: 'Female',
@@ -115,7 +115,7 @@ class _SignUpState extends State<SignUp> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30.0),
                             color: selected == 'others'
-                                ? Color.fromARGB(255, 37, 95, 219)
+                                ? Global.priCol
                                 : Color.fromARGB(255, 158, 158, 158)),
                         child: Global.customText(
                             text: 'Others',

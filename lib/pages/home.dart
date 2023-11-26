@@ -15,56 +15,44 @@ class _HomeState extends State<Home> {
     return Scaffold(
       drawer: Global.customDrawer(),
       appBar: Global.customBar(),
-      body: Container(
-          alignment: Alignment.topCenter,
-          height: MediaQuery.of(context).size.height * 1,
-          width: MediaQuery.of(context).size.width * 1,
-          // decoration: BoxDecoration(
-          //   image: DecorationImage(
-          //     image: AssetImage("assets/homebg.png"),
-          //     // fit: BoxFit.contain,
-          //     // fit: BoxFit.scaleDown,
-          //   ),
-          // ),
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width * 1,
-            child: Stack(
-              children: <Widget>[
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * .4,
-                  child: Positioned.fill(
-                    child: Image.asset(
-                      "assets/homebg.png",
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * .38,
-                      ),
-                      customBtn('I need to charge'),
-                      SizedBox(height: 32.0),
-                      customBtn('Nearby Station'),
-                      SizedBox(height: 32.0),
-                      customBtn('Manage Booking'),
-                      SizedBox(height: 32.0),
-                      customBtn('Plan my trip'),
-                    ],
-                  ),
-                )
-              ],
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width * 1,
+        child: Stack(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 1,
+              height: MediaQuery.of(context).size.height * .4,
+              child: Image.asset(
+                "assets/homebg.png",
+                fit: BoxFit.cover,
+                // alignment: Alignment.topCenter,
+              ),
             ),
-          )),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 1,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * .38,
+                  ),
+                  customBtn('I need to charge', '/booking'),
+                  SizedBox(height: 32.0),
+                  customBtn('Nearby Station', '/login'),
+                  SizedBox(height: 32.0),
+                  customBtn('Manage Booking', '/login'),
+                  SizedBox(height: 32.0),
+                  customBtn('Plan my trip', '/login'),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 
-  SizedBox customBtn(text) {
+  SizedBox customBtn(text, link) {
     return SizedBox(
       height: 55.0,
       width: MediaQuery.sizeOf(context).width * .85,
@@ -75,7 +63,7 @@ class _HomeState extends State<Home> {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, '/login');
+          Navigator.pushNamed(context, link);
         },
         child: Text(
           text,

@@ -13,8 +13,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Global.customDrawer(),
-      appBar: Global.customBar(),
+      drawer: Global.customDrawer(context),
+      appBar: Global.customBar(context),
       body: SizedBox(
         width: MediaQuery.of(context).size.width * 1,
         child: Stack(

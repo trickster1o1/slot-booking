@@ -13,8 +13,8 @@ class _BookingState extends State<Booking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Global.customDrawer(),
-      appBar: Global.customBar(),
+      drawer: Global.customDrawer(context),
+      appBar: Global.customBar(context),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

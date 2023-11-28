@@ -28,6 +28,16 @@ AppBar customBar(context) {
   );
 }
 
+AppBar appHeader(head) {
+  return AppBar(
+    iconTheme: IconThemeData(color: Colors.white),
+    title: Center(
+      child: customText(text: head, type: 'header', customCol: Colors.white),
+    ),
+    backgroundColor: priCol,
+  );
+}
+
 Drawer customDrawer(context) {
   return Drawer(
     child: ListView(
@@ -42,17 +52,17 @@ Drawer customDrawer(context) {
               },
               child: customText(text: 'x', type: 'normal', size: 18.0)),
         ),
-        listCont('Home', Icons.home_outlined),
-        listCont('Profile', Icons.person_2_outlined),
-        listCont('Setting', Icons.settings_outlined),
-        listCont('Help', Icons.help_outline),
-        listCont('Contact Us', Icons.phone_outlined),
+        listCont('Home', Icons.home_outlined, '/', context),
+        listCont('Profile', Icons.person_2_outlined, '/profile', context),
+        listCont('Setting', Icons.settings_outlined, '/', context),
+        listCont('Help', Icons.help_outline, '/', context),
+        listCont('Contact Us', Icons.phone_outlined, '/', context),
       ],
     ),
   );
 }
 
-Container listCont(text, icon) {
+Container listCont(text, icon, link, context) {
   return Container(
     decoration: BoxDecoration(
         border: Border(
@@ -61,7 +71,9 @@ Container listCont(text, icon) {
     child: ListTile(
       leading: Icon(icon),
       title: Text(text),
-      onTap: null,
+      onTap: () {
+        Navigator.pushNamed(context, link);
+      },
     ),
   );
 }

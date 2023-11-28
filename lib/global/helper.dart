@@ -31,9 +31,8 @@ AppBar customBar(context) {
 AppBar appHeader(head) {
   return AppBar(
     iconTheme: IconThemeData(color: Colors.white),
-    title: Center(
-      child: customText(text: head, type: 'header', customCol: Colors.white),
-    ),
+    title: customText(text: head, type: 'header', customCol: Colors.white),
+    centerTitle: true,
     backgroundColor: priCol,
   );
 }

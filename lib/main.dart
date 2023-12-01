@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slot/pages/booking.dart';
+import 'package:slot/pages/booknow.dart';
 import 'package:slot/pages/home.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:slot/pages/login.dart';
@@ -20,5 +21,6 @@ void main() {
         '/booking': (context) => Booking(),
         '/notifications': (context) => Notif(),
         '/profile': (context) => Profile(),
+        '/book-now': (context) => BookNow(),
       }));
 }
